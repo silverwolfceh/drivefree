@@ -1,21 +1,29 @@
 <?php include_once 'header.php'; ?>
 <div class="container">
 <?php
-	$list_api = array();
+	$prefix = getenv("JSON_PREFIX");
 	$num_acc = getenv('NUM_ACC');
-	if((int)$num_acc > 0)
+	$list_api = array();
+	if($prefix === FALSE || $num_acc === FALSE)
 	{
-		for($i = 0; $i < $num_acc; $i++)
+		$list_api["ACC_1"] = "v1.json";
+	}
+	else
+	{
+		if((int)$num_acc > 0)
 		{
-			$idx = $i + 1;
-			$c = getenv("ACC_".$idx);
-			$api_name = "v_".$idx.".json";
-			$f = fopen($api_name, "w");
-			$list_api["ACC_".$idx] = $api_name;
-			fwrite($f, $c);
-			fclose($f);
-		}
-	} 
+			for($i = 0; $i < $num_acc; $i++)
+			{
+				$idx = $i + 1;
+				$c = getenv("ACC_".$idx);
+				$api_name = $prefix.$idx.".json";
+				$f = fopen($api_name, "w");
+				$list_api["ACC_".$idx] = $api_name;
+				fwrite($f, $c);
+				fclose($f);
+			}
+		} 
+	}
 ?>
 
 <form class="form-inline" action="view.php" method="post">
