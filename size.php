@@ -48,7 +48,8 @@ else
 				$trash = $results->storageQuota->usageInDriveTrash;
 				$empty = $total - $uploaded2;
 
-				echo "Email: ".$email  ."  <br><br>";
+				// echo "Email: ".$email  ."  <br><br>";
+				echo "Email: tongvuu@gmail.com  <br><br>";
 				echo "Còn trống: ".round($empty / 1000000 , 0)  ." Mb <br><br>";
 				echo "Đã upload: ".round($uploaded2 / 1000000 , 0)  ." Mb <br><br>";
 				echo "Tổng: ". round($total / 1000000 , 0) ." Mb <br><br>";
