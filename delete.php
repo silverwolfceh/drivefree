@@ -33,9 +33,11 @@ if (!empty($_GET['fileId'])) {
 	
 
 	if ($folderId=="root") {
+		ob_clean();
 		header("Location: view.php");
 	}
 	else {
+		ob_clean();
 		header("Location: view.php?folderId=".$folderId."");
 	}
 	

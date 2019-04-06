@@ -24,6 +24,6 @@ else {
 	<a href="create_folder.php" class="list-group-item">Tạo mới folder</a>
 	<a href="copy.php?folderId=<?php echo $folderId ?>" class="list-group-item">Sao chép file</a>
 	<a href="size.php" class="list-group-item">Xem dung lượng</a>	
-	<a href="destroy.php" class="list-group-item"><?php echo $_SESSION['sverApi'] ?> - [Đăng xuất]</a>
+	<a href="destroy.php" class="list-group-item">End - [Đăng xuất]</a>
 
 </div>
