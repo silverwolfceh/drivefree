@@ -3,7 +3,7 @@
 <?php
 	$list_api = array();
 	$num_acc = getenv('NUM_ACC');
-	if(int($num_acc) > 0)
+	if((int)$num_acc > 0)
 	{
 		for($i = 0; $i < $num_acc; $i++)
 		{
