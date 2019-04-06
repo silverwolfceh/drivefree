@@ -1,5 +1,5 @@
 
-<?php require_once('header.php'); ?>
+<?php include_once 'header.php'; ?>
 <?php
 if (!empty($_POST['sverApi'])) {
 	$_SESSION['sverApi'] = $_POST['sverApi'];
