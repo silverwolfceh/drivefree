@@ -23,7 +23,7 @@
 	<select class="form-control" name="sverApi">
 		<?php
 			foreach ($list_api as $name => $api) {
-				echo "<option value='".$api."'>".$name."</option>"
+				echo "<option value='".$api."'>".$name."</option>";
 			}
 		?>
 	</select>
