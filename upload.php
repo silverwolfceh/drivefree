@@ -126,7 +126,7 @@ include_once 'google/vendor/autoload.php';
 						$newPermission = new Google_Service_Drive_Permission();
 						$newPermission->setType('anyone');
 						$newPermission->setRole('reader');
-						$file->setPermissions($newPermission)
+						$file->setPermissions($newPermission);
 						// $result = $service->permissions->create($file->getId(), $newPermission, array('fields' => 'id'));
 						//echo "File ID: ".$file->id."<br>";
 						echo "Tên file: " . $_FILES["file"]["name"] . "<br>";
