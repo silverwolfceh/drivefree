@@ -12,7 +12,6 @@ else
 {
 	if( (!isset($_SESSION['sverApi']) && empty($_SESSION['sverApi'])) ) 
 	{
-
 		echo '<script> window.location.href = "index.php" </script>';
 
 	}
@@ -35,10 +34,12 @@ if (!empty($_GET['fileId'])) {
 	
 
 	if ($folderId=="root") {
+		ob_start();
 		ob_clean();
 		header("Location: view.php");
 	}
 	else {
+		ob_start();
 		ob_clean();
 		header("Location: view.php?folderId=".$folderId."");
 	}
@@ -52,6 +53,8 @@ if (!empty($_GET['folderId']) && empty($_GET['fileId'])) {
 
 	$service->files->delete($folderId);
 	$service->files->emptytrash();
+	ob_start();
+	ob_clean();
 	header("Location: view.php");
 	die();
 }
