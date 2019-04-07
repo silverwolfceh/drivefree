@@ -65,7 +65,10 @@ include_once 'google/vendor/autoload.php';
 						$file = new Google_Service_Drive_DriveFile(array(
 							'name' => $_FILES["file"]["name"],
 							'parents' => array($folderId)));
-
+						$newPermission = new Google_Service_Drive_Permission();
+						$newPermission->setType('anyone');
+						$newPermission->setRole('reader');
+						$file->setPermissions($newPermission);
 						//$file->title = $_FILES["file"]["name"] ;
 						$chunkSizeBytes = 1 * 1024 * 1024;
 
@@ -123,10 +126,7 @@ include_once 'google/vendor/autoload.php';
 						$client->setDefer(false);
 
 
-						$newPermission = new Google_Service_Drive_Permission();
-						$newPermission->setType('anyone');
-						$newPermission->setRole('reader');
-						$file->setPermissions($newPermission);
+						
 						// $result = $service->permissions->create($file->getId(), $newPermission, array('fields' => 'id'));
 						//echo "File ID: ".$file->id."<br>";
 						echo "Tên file: " . $_FILES["file"]["name"] . "<br>";
