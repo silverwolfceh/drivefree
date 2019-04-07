@@ -1,7 +1,9 @@
 <?php require_once('header.php'); ?>
 <?php
 if (!empty($_POST['sverApi'])) {
-	$_SESSION['sverApi'] = $_POST['sverApi'];
+	$prefix = getenv("JSON_PREFIX");
+	$api_name = $prefix.$_POST['sverApi'].".json";
+	$_SESSION['sverApi'] = $api_name;
 }
 else 
 {
