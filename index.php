@@ -18,7 +18,7 @@
 				$c = getenv("ACC_".$idx);
 				$api_name = $prefix.$idx.".json";
 				$f = fopen($api_name, "w");
-				$list_api["ACC_".$idx] = $api_name;
+				$list_api["Google drive account #".$idx] = $api_name;
 				fwrite($f, $c);
 				fclose($f);
 			}
