@@ -34,14 +34,10 @@ if (!empty($_GET['fileId'])) {
 	
 
 	if ($folderId=="root") {
-		ob_start();
-		ob_clean();
-		header("Location: view.php");
+		echo '<script> window.location.href = "view.php" </script>';
 	}
 	else {
-		ob_start();
-		ob_clean();
-		header("Location: view.php?folderId=".$folderId."");
+		echo '<script> window.location.href = "view.php?folderId='.$folderId.'" </script>';
 	}
 	
 	die();
@@ -53,9 +49,7 @@ if (!empty($_GET['folderId']) && empty($_GET['fileId'])) {
 
 	$service->files->delete($folderId);
 	$service->files->emptytrash();
-	ob_start();
-	ob_clean();
-	header("Location: view.php");
+	echo '<script> window.location.href = "view.php" </script>';
 	die();
 }
 
